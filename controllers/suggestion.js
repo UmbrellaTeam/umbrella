@@ -5,7 +5,7 @@
  */
 
 var Error = require('error'),
-    Suggestion = require('../models/suggestion/Object'),
+    Suggestion = require('../models/suggestion/Suggestion'),
     Constants = require('../models/suggestion/Constants')
 ;
 
@@ -82,7 +82,6 @@ module.exports = {
         }
 
         var options = req.getParams();
-        options.date = new Date();
 
         new Suggestion(options).save(
             module.exports.storage,

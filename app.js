@@ -1,5 +1,5 @@
 /**
- * Subscription server
+ * Weather server
  *
  * @author appr
  */
@@ -60,7 +60,7 @@ Application.prototype.initWorker = function() {
         console.log('Connected to storage')
     });
     storage.on('error', function(err) {
-        console.log(err);
+        console.warn(err);
     });
 
     var pub = redis.createClient(
@@ -86,33 +86,20 @@ Application.prototype.initWorker = function() {
     }
 
     pub.on('error', function(err) {
-        console.log(err);
+        console.warn(err);
     });
     sub.on('error', function(err) {
-        console.log(err);
+        console.warn(err);
     });
     store.on('error', function(err) {
-        console.log(err);
+        console.warn(err);
     });
 
     var app = express();
     var http = require('http');
     var server = http.createServer(app);
 
-    var socketIo = io.listen(server);
-
-    socketIo.set(
-        'store',
-        new RedisStore({
-            redisPub: pub,
-            redisSub: sub,
-            redisClient: store
-        })
-    );
-
     require('./mvc').boot(app, mongoose, this.config);
-    require('./models/suggestion/Object').socketIo = socketIo;
-    require('./services/SocketIo')(socketIo, mongoose);
 
     server.listen(
         process.env.app_port || this.config.global.socket,

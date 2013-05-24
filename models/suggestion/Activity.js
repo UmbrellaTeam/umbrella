@@ -10,30 +10,26 @@ var Service = require('./Service');
  *
  * @param options
  */
-function Suggestion(options) {
+function Activity(options) {
 
     if (options.id) {
         this._id = options.id;
     }
 
     this.activity = options.activity;
-    this.cloudiness = options.cloudiness;
-    this.temperatureMin = options.temperatureMin;
-    this.temperatureMax = options.temperatureMax;
-    this.suggestion = options.suggestion;
 }
 
 /**
- * Save suggestion
+ * Save activity
  *
  * @param storage
  * @param callback
  */
-Suggestion.prototype.save = function(storage, callback) {
+Activity.prototype.save = function(storage, callback) {
 
     var self = this;
 
-    Suggestion.getService(storage).save(
+    Activity.getService(storage).save(
         this,
         function(err, result) {
             if (!err && result) {
@@ -52,13 +48,13 @@ Suggestion.prototype.save = function(storage, callback) {
  * @param options
  * @param callback
  */
-Suggestion.find = function(
+Activity.find = function(
     storage,
     options,
     callback
 ) {
 
-    Suggestion.getService(storage).find(
+    Activity.getService(storage).find(
         options,
         function(err, result, count) {
             if (err) {
@@ -70,7 +66,7 @@ Suggestion.find = function(
 
             result.forEach(function(it) {
 
-                items.push(new Suggestion(it));
+                items.push(new Activity(it));
             });
 
             callback(null, items, count);
@@ -85,9 +81,9 @@ Suggestion.find = function(
  * @param id
  * @param callback
  */
-Suggestion.destroy = function(storage, id, callback) {
+Activity.destroy = function(storage, id, callback) {
 
-    Suggestion.getService(storage).destroy(id, callback);
+    Activity.getService(storage).destroy(id, callback);
 };
 
 /**
@@ -95,13 +91,13 @@ Suggestion.destroy = function(storage, id, callback) {
  *
  * @param storage
  */
-Suggestion.getService = function(storage) {
+Activity.getService = function(storage) {
 
-    if (!Suggestion.service) {
-        Suggestion.service = new Service(storage);
+    if (!Activity.service) {
+        Activity.service = new Service.Activity(storage);
     }
 
-    return Suggestion.service;
+    return Activity.service;
 };
 
-module.exports = Suggestion;
+module.exports = Activity;
