@@ -1,0 +1,28 @@
+{
+  "author": "appr <appr@appr.me> (http://appr.me)",
+  "name": "umbrella-api",
+  "description": "umbrella project API",
+  "version": "0.0.1-2",
+  "homepage": "http://appr.me/",
+  "repository": {
+    "url": ""
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "v0.6.x"
+  },
+  "subdomain": "api.umbrella",
+  "dependencies": {
+    "express": "*",
+    "express-validator": "*",
+    "mongoose": "*",
+    "socket.io": "*",
+    "runnable": "git://github.com/vetrovosk/node-runnable.git",
+    "error": "git://github.com/vetrovosk/node-error.git",
+    "iniconfig": "git://github.com/vetrovosk/node-iniconfig.git"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {}
+}
