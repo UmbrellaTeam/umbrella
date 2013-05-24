@@ -1,0 +1,77 @@
+body {
+    background: url("/img/sun.jpg") no-repeat -150px -150px;
+}
+.question-wrapper {
+    width: 784px;
+    margin:auto;
+    margin-top: 20%;
+}
+
+.question {
+    font-size: 20px;
+}
+
+.question .prompt {
+    position: relative;
+    bottom: 4px;
+}
+
+.question select {
+    margin-left: 10px;
+    font-size: 20px;
+    height: 41px;
+}
+.question button {
+    margin-left: 10px;
+    position: relative;
+    bottom: 5px;
+}
+.question .activity {
+    width: 270px;
+}
+.question .day {
+    width: 185px;
+}
+.question .timeOfDay {
+    width: 120px;
+}
+
+/*
+.question-asked {
+    display:none;
+    font-size: 20px;
+}
+.question-asked .prompt {
+    position: relative;
+    top: 1px;
+}
+.question-asked div {
+    display: inline-block;
+    color: #555555;
+    padding: 0 21px;
+}
+.question-asked button {
+    margin-left: 10px;
+    position: relative;
+    bottom: 5px;
+}
+.question-asked .activity {
+    position: relative;
+    width: 242px;
+    top: 1px;
+}
+.question-asked .day {
+    position: relative;
+    width: 154px;
+    top: 1px;
+}
+.question-asked .timeOfDay {
+    position: relative;
+    width: 49px;
+    top: 1px;
+}*/
+
+.answer {
+    margin: 50px;
+    font-size: 16px;
+}
