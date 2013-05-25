@@ -89,7 +89,7 @@ body {
     bottom: 5px;
 }
 .question .activity {
-    width: 270px;
+    width: 140px;
 }
 .question .day {
     width: 185px;
@@ -105,10 +105,12 @@ body {
 }
 .answer {
     display: inline-block;
+    max-width: 600px;
     padding: 20px;
     margin-top: 5%;
     margin-bottom: 5%;
     font-size: 1.7em;
+    line-height: 1.3em;
     background-color: #fff;
     border: 1px solid #ccc;
     -webkit-border-radius: 15px;
