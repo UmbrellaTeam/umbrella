@@ -11,7 +11,7 @@ var Service = require('./Service');
  *
  * @param storage
  */
-function Object(options) {
+function Weather(options) {
 
     this.temperatureMin = options.temperatureMin;
     this.temperatureMax = options.temperatureMax;
@@ -25,18 +25,20 @@ function Object(options) {
  * @param object
  * @param callback
  */
-Object.get = function(storage, options, callback) {
+Weather.get = function(storage, options, callback) {
 
-    return Object.getService(storage).get(
+    return Weather.getService(storage).get(
         options,
         callback
     );
 };
 
-Object.getService = function(storage) {
+Weather.getService = function(storage) {
     if (!Service.service) {
         Service.service = new Service(storage);
     }
 
     return Service.service;
 };
+
+module.exports = Weather;
