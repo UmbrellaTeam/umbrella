@@ -99,7 +99,7 @@ Application.prototype.initWorker = function() {
     var http = require('http');
     var server = http.createServer(app);
 
-    require('./mvc').boot(app, mongoose, this.config);
+    require('./mvc').boot(app, mongoose, store, this.config);
 
     server.listen(
         process.env.app_port || this.config.global.socket,

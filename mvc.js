@@ -6,9 +6,9 @@ var fs = require('fs'),
     express = require('express')
 ;
 
-exports.boot = function(app, storage, config) {
+exports.boot = function(app, storage, redis, config) {
     bootApplication(app);
-    bootControllers(app, storage, config);
+    bootControllers(app, storage, redis, config);
 };
 
 /**
@@ -48,13 +48,13 @@ function bootApplication(app) {
  * Bootstrap controllers
  *
  */
-function bootControllers(app, storage, config) {
+function bootControllers(app, storage, redis, config) {
     fs.readdir(__dirname + '/controllers', function(err, files) {
         if (err) {
             throw err;
         }
         files.forEach(function(file) {
-            bootController(app, file, storage, config);
+            bootController(app, file, storage, redis, config);
         });
     });
 }
@@ -63,7 +63,7 @@ function bootControllers(app, storage, config) {
  * Example (simplistic) controller support
  *
  */
-function bootController(app, file, storage, config) {
+function bootController(app, file, storage, redis, config) {
     var name = file.replace('.js', ''),
         actions = require('./controllers/' + name),
         plural = name + 's', // realistically we would use an inflection lib
@@ -75,6 +75,7 @@ function bootController(app, file, storage, config) {
         prefix = '/';
     }
     actions.storage = storage;
+    actions.redis = redis;
     actions.config = config;
 
     Object.keys(actions).map(function(action) {

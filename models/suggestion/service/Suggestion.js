@@ -7,7 +7,6 @@
 var SCHEMA_NAME_SUGGESTION = 'Suggestion';
 var SCHEMA_NAME_ACTIVITY = 'Activity';
 
-
 /**
  * Constructor
  *

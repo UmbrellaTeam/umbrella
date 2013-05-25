@@ -75,7 +75,7 @@ module.exports = {
 
         var myResponse = {};
 
-        Weather.get(module.exports.storage, search, function(err, result) {
+        Weather.get(module.exports.redis, search, function(err, result) {
             if (err) {
 
                 return res.error(
@@ -128,9 +128,6 @@ module.exports = {
                 }
             );
         });
-
-
-
     },
 
     /**
