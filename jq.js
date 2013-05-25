@@ -15,6 +15,7 @@ jsdom.env({
             result = {},
             timeOfDayEnum = ['morning', 'day', 'evening', 'night'],
             cloudinessMap = {
+                'облачно': Constants.CLOUDINESS_CLOUDY,
                 'малооблачно': Constants.CLOUDINESS_CLOUDY,
                 'переменная облачность': Constants.CLOUDINESS_CLOUDY,
                 'облачно, временами дождь': Constants.CLOUDINESS_RAINY,
@@ -27,7 +28,7 @@ jsdom.env({
             node = $('.b-forecast-detailed__line').first(),
             currentTime = new window.Date().getTime();
 
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < 7; i++) {
             var dateObj = new window.Date(currentTime + i * 60 * 60 * 24 * 1000),
                 dateStr = dateObj.toString('yyyy-MM-dd'),
                 cloudinessColumn = 4;
