@@ -46,6 +46,17 @@ Suggestion.prototype.save = function(storage, callback) {
 };
 
 /**
+ * Update item
+ *
+ * @param storage
+ * @param callback
+ */
+Suggestion.update = function(storage, id, params, callback) {
+
+    Suggestion.getService(storage).update(id, params, callback);
+};
+
+/**
  * Find items
  *
  * @param storage

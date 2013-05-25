@@ -108,6 +108,55 @@ module.exports = {
     },
 
     /**
+     * Update suggestion
+     *
+     * @param req
+     * @param res
+     */
+    update: function(req, res) {
+        req.assert('activity', 'activity validation failed').notEmpty();
+        req.assert('temperatureMin', 'temperatureMin validation failed').notEmpty();
+        req.assert('temperatureMax', 'temperatureMax validation failed').notEmpty();
+        req.assert('cloudiness', 'cloudiness validation failed').notEmpty();
+        req.assert('suggestion', 'suggestion validation failed').notEmpty();
+        req.assert('id', 'id validation failed').notEmpty();
+
+        if (req.hasErrors()) {
+
+            return res.error(
+                new Error(
+                    'Validation failed',
+                    req.getErrors(),
+                    Error.CODE_BAD_REQUEST
+                )
+            );
+        }
+
+        var options = req.getParams();
+
+        Suggestion.update(
+            module.exports.storage,
+            req.param('id'),
+            options,
+            function(err, result) {
+                if (err) {
+
+                    return res.error(
+                        new Error(
+                            'Failed to update suggestion: ' + (err.message || 'Unknown error'),
+                            err,
+                            Error.CODE_SERVER_ERROR
+                        )
+                    );
+                }
+
+                res.created(result);
+            }
+        );
+    },
+
+
+    /**
      * Delete suggestion
      *
      */

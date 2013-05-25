@@ -52,6 +52,23 @@ Service.prototype.save = function(object, callback) {
 };
 
 /**
+ * Update item
+ *
+ * @param id
+ * @param params
+ * @param callback
+ */
+Service.prototype.update = function(id, params, callback) {
+
+    this.suggestion.update(
+        {_id: id},
+        {$set: params},
+        {},
+        callback
+    );
+};
+
+/**
  * Destroy suggestion
  *
  * @param id
