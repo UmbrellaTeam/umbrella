@@ -1,7 +1,16 @@
 body {
+    background-color: #54c4fb;
     background-image: url("/img/bg.png");
     background-repeat: repeat-x;
     text-align: center;
+}
+.bg-pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("/img/sun.png") no-repeat -150px -150px;
+    width: 150px;
+    height: 150px;
 }
 .question-wrapper {
     margin:auto;
