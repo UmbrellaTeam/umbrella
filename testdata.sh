@@ -1,0 +1,57 @@
+#!/bin/bash
+#work 
+# night
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "cloudy", "timeOfDay": "night", "suggestion": "На работу? Ночью? Иди лучше в паб или поспи в крайнем случае"}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "cloudy", "timeOfDay": "night", "suggestion": "На работу? Ночью? Иди лучше в клуб или поспи в крайнем случае"}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "cloudy", "timeOfDay": "night", "suggestion": "На работу? Ночью? Иди лучше в кино или поспи в крайнем случае"}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "sunny", "timeOfDay": "night", "suggestion": "На работу? Ночью? Иди лучше в паб или поспи в крайнем случае"}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "sunny", "timeOfDay": "night", "suggestion": "На работу? Ночью? Иди лучше в клуб или поспи в крайнем случае"}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "sunny", "timeOfDay": "night", "suggestion": "На работу? Ночью? Иди лучше в кино или поспи в крайнем случае"}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "rainy", "timeOfDay": "night", "suggestion": "На работу? Ночью? Иди лучше в паб или поспи в крайнем случае"}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "rainy", "timeOfDay": "night", "suggestion": "На работу? Ночью? Иди лучше в клуб или поспи в крайнем случае"}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "rainy", "timeOfDay": "night", "suggestion": "На работу? Ночью? Иди лучше в кино или поспи в крайнем случае"}'
+
+# morning cloudy
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "cloudy", "timeOfDay": "morning", "suggestion": "Серое небо, серое утро, зеленая работа. Мы и сами не знаем, почему она зеленая. Наверное, звучит прикольно."}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "cloudy", "timeOfDay": "morning", "suggestion": "Серое утро? Самое время надеть что-нибудь яркое и солнечное."}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "cloudy", "timeOfDay": "morning", "suggestion": "Однозначно не стоит оголяться: на работе неправильно поймут да и погода не супер. Надень что-нибудь легкое."}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "cloudy", "timeOfDay": "morning", "suggestion": "Утро хорошее, можно и прогуляться. Загар не улучшишь, зато насладишься утренним кофем."}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "cloudy", "timeOfDay": "morning", "suggestion": "Кеды, туфли, пиджак, юбка, рубашка, ветровка и легкая кофта - вот лучшая одежда на это утро"}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "cloudy", "timeOfDay": "morning", "suggestion": "Жаждете голубого неба? Посмотрите наверх! А теперь ждите, ждите, ждите..."}'
+
+# morning rainy
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "rainy", "timeOfDay": "morning", "suggestion": "Питер как всегда не радует? Зато тепло и можно в сандалях шлепать по лужам."}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "rainy", "timeOfDay": "morning", "suggestion": "Тучи, а тучи, а тучи... Долждевичек не помешает, а заодно и чашка кофе после бессонной ночи."}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "rainy", "timeOfDay": "morning", "suggestion": "Вместе весело... ехать в троллейбусе с невыспавшимися людьми. Зато не промокнешь! Но зонтик и резиновые сапоги не помешают."}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "rainy", "timeOfDay": "morning", "suggestion": "Утро, зонтики, спешащие люди... Мрачное настроение поднимет тот факт, что друзья-то поехали на шашлыки :)"}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "rainy", "timeOfDay": "morning", "suggestion": "Шлеп, шлеп, шлеп. Вот так и начнется твое утро - на работу да по теплым лужам! Красота!"}'
+
+# morning clear
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 21, "temperatureMax": 35, "cloudiness": "sunny", "timeOfDay": "morning", "suggestion": "Хм, в такую хорошую погоду и на работу? Ну хоть не забудь взять солнечные очки и надеть шорты."}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e527aebff8865000002", "temperatureMin": 21, "temperatureMax": 35, "cloudiness": "sunny", "timeOfDay": "morning", "suggestion": "Тебе повезло - не надо будет париться на жаре :). А по дороге побалуй себя мороженным."}'
+
+# walk
+# cloudy  
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e807aebff8865000003", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "cloudy", "timeOfDay": "morning", "suggestion": "Утром ничего нет. Дождя нет, солнца нет. Но обязательно должно быть хорошее настроение."}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e807aebff8865000003", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "cloudy", "timeOfDay": "morning", "suggestion": "Не загорите конечно, но и не промокните."}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e807aebff8865000003", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "cloudy", "timeOfDay": "morning", "suggestion": "Солнца не будет, поэтому просто улыбайтесь!"}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e807aebff8865000003", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "cloudy", "timeOfDay": "morning", "suggestion": "Отличный день для игры: \"На что походит туча?\". А вот тут другие интересные игры."}'
+curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e807aebff8865000003", "temperatureMin": 11, "temperatureMax": 20, "cloudiness": "cloudy", "timeOfDay": "morning", "suggestion": "Облака - белогривые лошадки-и-и-и!"}'
+
+
+#sunny
+#curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e807aebff8865000003", "temperatureMin": 15, "temperatureMax": 30, "cloudiness": "sunny", "suggestion": "Гулять Солнечно Возьмите крем от загара - солнце будет постоянно!"}'
+#curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e807aebff8865000003", "temperatureMin": 15, "temperatureMax": 30, "cloudiness": "sunny", "suggestion": "Очки от солнца - круто и практично!"}'
+#curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e807aebff8865000003", "temperatureMin": 15, "temperatureMax": 30, "cloudiness": "sunny", "suggestion": "Безлимитный витамин D - гуляйте, солнца будет много!"}'
+
+# cloudy
+
+#curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e807aebff8865000003", "temperatureMin": 15, "temperatureMax": 30, "cloudiness": "cloudy", "suggestion": "Отличный день для игры: На что походит туча"}'
+#curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e807aebff8865000003", "temperatureMin": 15, "temperatureMax": 30, "cloudiness": "cloudy", "suggestion": "Облака - белогривые лошадки-и-и-и!"}'
+#curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e807aebff8865000003", "temperatureMin": 15, "temperatureMax": 30, "cloudiness": "cloudy", "suggestion": "Сегодня солнца не будет, но все равно идите!"}'
+
+# rainy 
+#curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e807aebff8865000003", "temperatureMin": 15, "temperatureMax": 30, "cloudiness": "rainy", "suggestion": "Посидите лучше дома, ожидаем дождь."}'
+#curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e807aebff8865000003", "temperatureMin": 15, "temperatureMax": 30, "cloudiness": "rainy", "suggestion": "Если нравиться по лужам шлепать - вперед!"}'
+#curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e807aebff8865000003", "temperatureMin": 15, "temperatureMax": 30, "cloudiness": "rainy", "suggestion": "Ветровка, зонт, калоши и день будет хорошим!"}'
+#curl -X POST 'http://pogodable.ru/api/suggestions/' -H 'Content-Type: application/json' --data '{"activity": "51a08e807aebff8865000003", "temperatureMin": 15, "temperatureMax": 30, "cloudiness": "rainy", "suggestion": "Прогулка в дождь - это романтично, но глупо)))"}'
