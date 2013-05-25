@@ -6,27 +6,41 @@ html, body {
 }
 body {
     text-align: center;
+}
+.bg-1 {
+    background: url('/img/bg-1.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-.bg-1 {
-    background: url('/img/bg-1.jpg') no-repeat fixed;
 }
 .bg-2 {
-    background: url('/img/bg-2.png') no-repeat fixed;
+    background: url('/img/bg-2.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .bg-3 {
-    background: url('/img/bg-3.png') no-repeat fixed;
+    background: url('/img/bg-3.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .bg-4 {
-    background: url('/img/bg-4.png') no-repeat fixed;
+    background: url('/img/bg-4.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .bg-5 {
-    background: url('/img/bg-5.png') no-repeat fixed;
+    background: url('/img/bg-5.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .bg-pic {
     z-index: -1;
