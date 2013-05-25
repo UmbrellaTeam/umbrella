@@ -12,6 +12,39 @@ var Error = require('error'),
 module.exports = {
 
     /**
+     * Get all suggestions
+     *
+     * @param req
+     * @param res
+     */
+    index: function(req, res) {
+
+        var search = req.getParams();
+
+        search.offset = search.offset || Constants.DEFAULT_OFFSET;
+        search.count = search.count || Constants.DEFAULT_COUNT;
+
+        Suggestion.find(
+            module.exports.storage,
+            search,
+            function(err, result) {
+                if (err) {
+
+                    return res.error(
+                        new Error(
+                            'Failed to find suggestion: ' + (err.message || 'Unknown error'),
+                            err,
+                            Error.CODE_SERVER_ERROR
+                        )
+                    );
+                }
+
+                res.send(result);
+            })
+        ;
+    },
+
+    /**
      * Get suggestion
      *
      * @param req
