@@ -1,11 +1,6 @@
 $(function() {
     var BACKEND = 'http://pogodable.ru/api';
 
-    $('#ask').click(function() {
-        $('.question-wrapper .caption').addClass('topped');
-        $('.answer-wrapper').fadeIn(300);
-    });
-
     $.get(BACKEND + '/activitys', function(list) {
         for (var index in list) {
             var element = $('<option value="' +
@@ -55,6 +50,7 @@ $(function() {
     })();
 
     $('#ask').click(function() {
+        $('.answer-wrapper').hide();
         $.get(
             BACKEND + '/suggestions/find',
             {
@@ -64,6 +60,8 @@ $(function() {
             },
             function(response) {
                 if (response && response['suggestion']) {
+                    $('.question-wrapper .caption').addClass('topped');
+                    $('.answer-wrapper').fadeIn(300);
                     $('.answer div').html(response['suggestion']);
                     $('.answer img').attr('src', '/img/' + response['cloudiness'] + '.png');
                 }
