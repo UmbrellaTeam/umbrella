@@ -52,7 +52,7 @@ $(function() {
 
 	$('#ask').click(function() {
 		$('.answer-wrapper').hide();
-		$.get(
+		$.post(
 			BACKEND + '/suggestions/find',
 			{
 				'activity': $('.question .activity').val(),
