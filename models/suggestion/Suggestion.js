@@ -21,6 +21,7 @@ function Suggestion(options) {
     this.temperatureMin = options.temperatureMin;
     this.temperatureMax = options.temperatureMax;
     this.suggestion = options.suggestion;
+    this.timeOfDay = options.timeOfDay;
 }
 
 /**

@@ -19,6 +19,7 @@ function Service(storage) {
         temperatureMin: {type: Number, 'default': 0, required: true},
         temperatureMax: {type: Number, 'default': 0, required: true},
         cloudiness: {type: String, required: true},
+        timeOfDay: {type: String, required: true},
         activity: {
             type: storage.Schema.ObjectId,
             ref: SCHEMA_NAME_ACTIVITY
@@ -107,20 +108,24 @@ Service.prototype.find = function(
 ) {
     var filter = {}, options = {};
 
-//    if (search.temperatureMin) {
-//        filter.temperatureMin = {
-//            $lte: search.temperatureMin
-//        };
-//    }
+    if (search.temperatureMin) {
+        filter.temperatureMin = {
+            $lte: search.temperatureMin
+        };
+    }
 
-//    if (search.temperatureMax) {
-//        filter.temperatureMax = {
-//            $gte: search.temperatureMax
-//        };
-//    }
+    if (search.temperatureMax) {
+        filter.temperatureMax = {
+            $gte: search.temperatureMax
+        };
+    }
 
     if (search.cloudiness) {
         filter.cloudiness = search.cloudiness;
+    }
+
+    if (search.timeOfDay) {
+        filter.timeOfDay = search.timeOfDay;
     }
 
     if (search.activity) {
