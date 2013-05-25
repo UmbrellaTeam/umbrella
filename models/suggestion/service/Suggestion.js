@@ -23,7 +23,8 @@ function Service(storage) {
         activity: {
             type: storage.Schema.ObjectId,
             ref: SCHEMA_NAME_ACTIVITY
-        }
+        },
+        active: {type: Boolean, required: false}
     }, {strict: true});
 
     this.suggestion = storage.model(SCHEMA_NAME_SUGGESTION, suggestion);

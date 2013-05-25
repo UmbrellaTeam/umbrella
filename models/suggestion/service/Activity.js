@@ -6,7 +6,6 @@
 
 var SCHEMA_NAME_ACTIVITY = 'Activity';
 
-
 /**
  * Constructor
  *

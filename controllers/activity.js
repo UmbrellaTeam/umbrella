@@ -83,8 +83,44 @@ module.exports = {
                 res.created(result);
             }
         );
+    },
+
+    /**
+     * Delete suggestion
+     *
+     */
+    destroy: function(req, res) {
+        req.assert('id', 'id validation failed').notEmpty();
+
+        if (req.hasErrors()) {
+
+            return res.error(
+                new Error(
+                    'Validation failed',
+                    req.getErrors(),
+                    Error.CODE_BAD_REQUEST
+                )
+            );
+        }
+
+        Activity.destroy(
+            module.exports.storage,
+            req.param('id'),
+            function(err, result) {
+                if (err) {
+
+                    return res.error(
+                        new Error(
+                            'Failed to destroy activity: ' + (err.message || 'Unknown error'),
+                            err,
+                            Error.CODE_SERVER_ERROR
+                        )
+                    );
+                }
+
+                res.send(result);
+            }
+        );
     }
-
-
 
 };

@@ -52,7 +52,12 @@ module.exports = {
                     );
                 }
 
-                res.send(result);
+                if (result && result.length) {
+
+                    return res.send(Math.floor(Math.random() * result.length));
+                }
+
+                res.send(null);
             })
         ;
     },
