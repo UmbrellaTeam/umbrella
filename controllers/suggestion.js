@@ -73,7 +73,7 @@ module.exports = {
         search.offset = search.offset || Constants.DEFAULT_OFFSET;
         search.count = search.count || Constants.DEFAULT_COUNT;
 
-        Weather.get(module.exports.storage, search.date, search.timeOfDay, function(err, result) {
+        Weather.get(module.exports.storage, search, function(err, result) {
             if (err) {
 
                 return res.error(
