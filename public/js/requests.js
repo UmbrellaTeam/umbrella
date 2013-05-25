@@ -59,11 +59,13 @@ $(function() {
                 'timeOfDay': $('.question .timeOfDay').val()
             },
             function(response) {
-                if (response && response['suggestion']) {
+                if (response && response.suggestion) {
                     $('.question-wrapper .caption').addClass('topped');
                     $('.answer-wrapper').fadeIn(300);
-                    $('.answer div').html(response['suggestion']);
-                    $('.answer img').attr('src', '/img/' + response['cloudiness'] + '.png');
+                    $('.answer div').html(response.suggestion.suggestion);
+                    if (response.weather) {
+                        $('.answer img').attr('src', '/img/' + response.weather.cloudiness + '.png');
+                    }
                 }
             }
         );

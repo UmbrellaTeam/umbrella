@@ -73,6 +73,8 @@ module.exports = {
         search.offset = search.offset || Constants.DEFAULT_OFFSET;
         search.count = search.count || Constants.DEFAULT_COUNT;
 
+        var myResponse = {};
+
         Weather.get(module.exports.storage, search, function(err, result) {
             if (err) {
 
@@ -100,6 +102,8 @@ module.exports = {
             search.temperatureMax = result.temperatureMax;
             search.cloudiness = result.cloudiness;
 
+            myResponse.weather = result;
+
             Suggestion.find(
                 module.exports.storage,
                 search,
@@ -117,10 +121,10 @@ module.exports = {
 
                     if (result && result.length) {
 
-                        return res.send(result[Math.floor(Math.random() * result.length)]);
+                        myResponse.suggestion = result[Math.floor(Math.random() * result.length)];
                     }
 
-                    res.send(null);
+                    res.send(myResponse);
                 }
             );
         });

@@ -154,7 +154,7 @@ Service.prototype.find = function(
 
     this.suggestion.find(
         filter,
-        {},
+        'suggestion',
         options,
         function(err, result) {
             if (err) {
