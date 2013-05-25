@@ -123,7 +123,8 @@ Service.prototype.find = function(
     }
 
     if (search.activity) {
-        filter.activity = search.activity;
+        var ObjectId = require('mongoose').Types.ObjectId;
+        filter.activity = new ObjectId(search.activity);
     }
 
     var filterMap = {
