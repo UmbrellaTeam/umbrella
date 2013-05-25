@@ -76,7 +76,7 @@ body {
 
 .social-wrapper {
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     left: 0;
     right: 0;
     width: 100%;
@@ -85,4 +85,13 @@ body {
 
 .social {
     display: inline-block;
+}
+.social div {
+    display: inline-block;
+}
+.social .twitter-tweet {
+    margin-left: 20px;
+}
+.social .g-plusone {
+    width: 100px;
 }
