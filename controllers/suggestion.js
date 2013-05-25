@@ -181,11 +181,6 @@ module.exports = {
      * @param res
      */
     update: function(req, res) {
-        req.assert('activity', 'activity validation failed').notEmpty();
-        req.assert('temperatureMin', 'temperatureMin validation failed').notEmpty();
-        req.assert('temperatureMax', 'temperatureMax validation failed').notEmpty();
-        req.assert('cloudiness', 'cloudiness validation failed').notEmpty();
-        req.assert('suggestion', 'suggestion validation failed').notEmpty();
         req.assert('id', 'id validation failed').notEmpty();
 
         if (req.hasErrors()) {
@@ -221,7 +216,6 @@ module.exports = {
             }
         );
     },
-
 
     /**
      * Delete suggestion
