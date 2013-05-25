@@ -63,10 +63,12 @@ $(function() {
 				if(response && response.suggestion) {
 					$('.question').addClass('topped');
 					$('.answer-wrapper').fadeIn(300);
-					$('.answer div').html(response.suggestion.suggestion);
+					$('.answer div.suggestion').html(response.suggestion.suggestion);
 					if(response.weather) {
 						$('.answer img').attr('src', '/img/' + response.weather.cloudiness + '.png');
+                        $('.answer .degrees').text('+' + response.weather.temperatureMin + '…+' + response.weather.temperatureMax);
 					}
+                    console.log(response);
 				}
 			}
 		);

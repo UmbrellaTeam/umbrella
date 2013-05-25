@@ -121,8 +121,10 @@ body {
     width: 60px;
     height: 60px;
 }
+.answer span.degrees {
+    margin-left: 15px;
+}
 .answer div {
-    display: inline-block;
     position: relative;
     top: 4px;
     margin-left: 10px;
