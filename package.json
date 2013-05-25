@@ -20,6 +20,7 @@
     "express-validator": "*",
     "mongoose": "*",
     "socket.io": "*",
+    "jsdom": "*",
     "runnable": "git://github.com/vetrovosk/node-runnable.git",
     "error": "git://github.com/vetrovosk/node-error.git",
     "iniconfig": "git://github.com/vetrovosk/node-iniconfig.git"
