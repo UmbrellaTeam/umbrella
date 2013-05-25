@@ -28,6 +28,7 @@ body {
 
 .caption {
     padding-top: 18%;
+    margin-top: 0;
     margin-bottom: 5px;
 }
 .caption.topped {
@@ -125,19 +126,22 @@ body {
     width: 100px;
 }
 
-@media
-    only screen and (-webkit-min-device-pixel-ratio : 1.5),
-    only screen and (min-device-pixel-ratio : 1.5) {
-
-    .bg-pic {
-        display: none;
-    }
-}
-
 @media only screen
     and (max-width : 700px) {
 
     .bg-pic {
         display: none;
+    }
+
+    .social-wrapper {
+        display: none;
+    }
+
+    .question > div,
+    .question > select,
+    .question > button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
