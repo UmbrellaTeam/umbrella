@@ -58,8 +58,9 @@ $(function() {
                 'timeOfDay': $('.question .timeOfDay').val()
             },
             function(response) {
+                console.log(response);
                 if (response && response['suggestion']) {
-                    var element = $(response['suggestion']).wrap('<p>');
+                    var element = $('<p>' + response['suggestion'] + '</p>');
                     $('.answer').html(element);
                 }
             }
