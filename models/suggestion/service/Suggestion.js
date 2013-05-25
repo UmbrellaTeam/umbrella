@@ -114,11 +114,11 @@ Service.prototype.find = function(
 //        };
 //    }
 
-    if (search.temperatureMax) {
-        filter.temperatureMax = {
-            $gte: search.temperatureMax
-        };
-    }
+//    if (search.temperatureMax) {
+//        filter.temperatureMax = {
+//            $gte: search.temperatureMax
+//        };
+//    }
 
     if (search.cloudiness) {
         filter.cloudiness = search.cloudiness;
