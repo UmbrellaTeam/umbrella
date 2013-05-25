@@ -1,16 +1,16 @@
 $(function() {
     $('#ask').click(function() {
-        $('.question-wrapper').animate(
-            {'margin-top': '3%'}, 1000, function() {
-            }
-        );
+        $('.question-wrapper').css('margin-top', '3%');
+        $('#ask').hide();
+        $('#retry').show();
+        $('.answer').fadeIn(300, function() {
+        });
     });
-    /*$('#ask').click(function() {
-        $('.question').hide();
-        $('.question-asked').show();
-    });
+
     $('#retry').click(function() {
-        $('.question-asked').hide();
-        $('.question').show();
-    });*/
+        $('#ask').show();
+        $('#retry').hide();
+        $('.answer').hide();
+        $('.question-wrapper').css('margin-top', '18%');
+    });
 });

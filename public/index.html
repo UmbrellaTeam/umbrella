@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>А нужен ли зонтик?</title>
+<title>Погода в действии</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.css" rel="stylesheet" media="screen">
@@ -9,12 +9,14 @@
 </head>
 <body>
     <div class="question-wrapper">
+        <h1 class="caption">Погода в действии:</h1>
+        <div class="comment">мы аггрегируем погоду с yandex, gismeteo, yahoo и других источников</div>
         <div class="question">
-            <span class="prompt">Я иду</span>
+            <div class="prompt">Я иду</div>
             <select class="activity">
                 <option value="work">на работу</option>
                 <option value="">гулять</option>
-                <option>кататься на велосипеде</option>
+                <option>кататься</option>
                 <option>купаться</option>
             </select>
             <select class="day">
@@ -33,7 +35,8 @@
                 <option>днём</option>
                 <option>вечером</option>
             </select>
-            <button id="ask" class="btn btn-large btn-success">Жмяк!</button>
+            <button id="ask" class="btn btn-large btn-success">Узнать погоду!</button>
+            <button id="retry" class="btn btn-large btn-info">Повторить!</button>
         </div>
         <!-- <div class="question-asked">
             <span class="prompt">Я иду</span>
@@ -45,7 +48,7 @@
         <div class="answer">
             <p>Лучше погоды для работы и не придумать!</p>
             <p>Солнце поднимет настроение, а холодный ветер на даст погулять.</p>
-
+            <p>Сегодня надо взять полный комплект: и зонтик не помешает и очки тоже!</p>
         </div>
     </div>
     <script src="js/jquery.js"></script>

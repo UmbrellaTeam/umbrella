@@ -1,19 +1,36 @@
 body {
-    background: url("/img/sun.jpg") no-repeat -150px -150px;
+    background-image: url("/img/bg.png");
+    background-repeat: repeat-x;
+    text-align: center;
 }
 .question-wrapper {
-    width: 784px;
     margin:auto;
-    margin-top: 20%;
+    margin-top: 18%;
+}
+
+.caption {
+    margin-bottom: 5px;
+}
+
+.comment {
+    font-size: 12px;
+    margin-bottom: 15px;
 }
 
 .question {
     font-size: 20px;
 }
 
+.question > div,
+.question > select,
+.question > button {
+    margin-top: 20px;
+}
+
 .question .prompt {
     position: relative;
-    bottom: 4px;
+    display: inline-block;
+    top: 5px;
 }
 
 .question select {
@@ -34,6 +51,10 @@ body {
 }
 .question .timeOfDay {
     width: 120px;
+}
+
+#retry {
+    display: none;
 }
 
 /*
@@ -72,6 +93,12 @@ body {
 }*/
 
 .answer {
+    max-width: 600px;
+    padding: 0 20px;
+    display: none;
     margin: 50px;
     font-size: 16px;
+    text-align: left;
+    margin-left:auto;
+    margin-right: auto;
 }
