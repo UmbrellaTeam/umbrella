@@ -39,8 +39,6 @@ function Service(storage) {
  */
 Service.prototype.save = function(object, callback) {
 
-    console.log(object);
-
     var item = new (this.suggestion)();
 
     Object.keys(object).forEach(function(it) {

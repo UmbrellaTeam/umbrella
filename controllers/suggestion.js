@@ -54,7 +54,7 @@ module.exports = {
 
                 if (result && result.length) {
 
-                    return res.send(Math.floor(Math.random() * result.length));
+                    return res.send(result[Math.floor(Math.random() * result.length)]);
                 }
 
                 res.send(null);
