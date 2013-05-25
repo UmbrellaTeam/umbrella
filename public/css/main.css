@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
 body {
     background-color: #54c4fb;
     background-image: url("/img/bg.png");
@@ -14,11 +20,14 @@ body {
     height: 150px;
 }
 .question-wrapper {
-    margin:auto;
-    margin-top: 18%;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
 }
 
 .caption {
+    padding-top: 18%;
     margin-bottom: 5px;
 }
 
@@ -63,22 +72,40 @@ body {
     width: 120px;
 }
 
-.answer {
-    max-width: 600px;
-    padding: 0 20px;
-    display: none;
-    margin: 50px;
-    font-size: 16px;
-    text-align: left;
+.answer-wrapper {
     margin-left:auto;
     margin-right: auto;
+    display:none;
+}
+.answer {
+    display: inline-block;
+    padding: 20px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 24px;
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px;
+}
+.answer img {
+    width: 60px;
+    height: 60px;
+}
+.answer div {
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    margin-left: 10px;
+}
+
+.social-wrapper, .push {
+    height: 50px; /* .push must be the same height as .footer */
 }
 
 .social-wrapper {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    right: 0;
     width: 100%;
     text-align: center;
 }
@@ -90,7 +117,7 @@ body {
     display: inline-block;
 }
 .social .twitter-tweet {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 .social .g-plusone {
     width: 100px;
