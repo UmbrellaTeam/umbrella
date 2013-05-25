@@ -15,45 +15,21 @@
         <div class="question">
             <div class="prompt">Я иду</div>
             <select class="activity">
-                <option value="work">на работу</option>
-                <option value="">гулять</option>
-                <option>кататься</option>
-                <option>купаться</option>
             </select>
             <select class="day">
-                <option>сегодня</option>
-                <option>завтра</option>
-                <option>в понедельник</option>
-                <option>во вторник</option>
-                <option>в среду</option>
-                <option>в четверг</option>
-                <option>в пятницу</option>
-                <option>в субботу</option>
-                <option>в воскресенье</option>
             </select>
             <select class="timeOfDay">
-                <option>утром</option>
-                <option>днём</option>
-                <option>вечером</option>
+                <option value="morning">утром</option>
+                <option value="day">днём</option>
+                <option value="evening">вечером</option>
             </select>
             <button id="ask" class="btn btn-large btn-success">Узнать погоду!</button>
-            <button id="retry" class="btn btn-large btn-info">Повторить!</button>
         </div>
-        <!-- <div class="question-asked">
-            <span class="prompt">Я иду</span>
-            <div class="activity">на работу</div>
-            <div class="day">сегодня</div>
-            <div class="timeOfDay">утром</div>
-            <button id="retry" class="btn btn-large btn-success">Жмяк!</button>
-        </div> -->
-        <div class="answer">
-            <p>Лучше погоды для работы и не придумать!</p>
-            <p>Солнце поднимет настроение, а холодный ветер на даст погулять.</p>
-            <p>Сегодня надо взять полный комплект: и зонтик не помешает и очки тоже!</p>
-        </div>
+        <div class="answer"></div>
     </div>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/date.js"></script>
     <script src="js/actions.js"></script>
     <script src="js/requests.js"></script>
 </body>
