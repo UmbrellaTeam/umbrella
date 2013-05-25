@@ -15,9 +15,9 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background: url("/img/sun.png") no-repeat -150px -150px;
-    width: 150px;
-    height: 150px;
+    background: url("/img/pogodable_logo.png") no-repeat 10px 10px;
+    width: 500px;
+    height: 124px;
 }
 .question-wrapper {
     min-height: 100%;
@@ -29,6 +29,9 @@ body {
 .caption {
     padding-top: 18%;
     margin-bottom: 5px;
+}
+.caption.topped {
+    padding-top: 10%;
 }
 
 .comment {
@@ -120,4 +123,21 @@ body {
 }
 .social .g-plusone {
     width: 100px;
+}
+
+@media
+    only screen and (-webkit-min-device-pixel-ratio : 1.5),
+    only screen and (min-device-pixel-ratio : 1.5) {
+
+    .bg-pic {
+        display: none;
+    }
+}
+
+@media only screen
+    and (max-width : 700px) {
+
+    .bg-pic {
+        display: none;
+    }
 }

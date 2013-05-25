@@ -2,7 +2,7 @@ $(function() {
     var BACKEND = 'http://pogodable.ru/api';
 
     $('#ask').click(function() {
-        $('.question-wrapper .caption').css('padding-top', '3%');
+        $('.question-wrapper .caption').addClass('topped');
         $('.answer-wrapper').fadeIn(300);
     });
 
@@ -30,7 +30,7 @@ $(function() {
         };
 
         var currentTime = new Date().getTime();
-        for (var i = 0; i <= 6; i++) {
+        for (var i = 0; i <= 2; i++) {
             var caption = null,
                 dateObj = new Date(
                     currentTime + i * 60 * 60 * 24 * 1000),
