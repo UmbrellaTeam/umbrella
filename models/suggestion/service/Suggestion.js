@@ -110,13 +110,13 @@ Service.prototype.find = function(
 
     if (search.temperatureMin) {
         filter.temperatureMin = {
-            $lte: search.temperatureMin
+            $gte: search.temperatureMin
         };
     }
 
     if (search.temperatureMax) {
         filter.temperatureMax = {
-            $gte: search.temperatureMax
+            $lte: search.temperatureMax
         };
     }
 
