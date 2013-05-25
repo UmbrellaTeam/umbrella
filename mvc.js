@@ -81,7 +81,7 @@ function bootController(app, file, storage, config) {
         var fn = controllerAction(name, plural, action, actions[action]);
         switch (action) {
             case 'index':
-                app.get(prefix, fn);
+                app.get(prefix != '/' ? prefix : (prefix + '/'), fn);
                 break;
             case 'show':
                 app.get(prefix + '/:id.:format?', fn);
