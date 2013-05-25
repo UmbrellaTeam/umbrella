@@ -1,7 +1,7 @@
 $(function() {
 	var BACKEND = 'http://pogodable.ru/api';
 
-	$.get(BACKEND + '/activitys', function(list) {
+	$.get(BACKEND + '/activitys/', function(list) {
 		for (var index in list) {
 			var element = $('<option value="' +
 				list[index]['_id'] + '">' +
@@ -26,7 +26,7 @@ $(function() {
 		};
 
 		var currentTime = new Date().getTime();
-		for (var i = 0; i <= 2; i++) {
+		for (var i = 0; i <= 6; i++) {
 			var caption = null,
 				dateObj = new Date(
 					currentTime + i * 60 * 60 * 24 * 1000),
