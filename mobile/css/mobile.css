@@ -1,0 +1,75 @@
+.question-wrapper {
+    margin-top: 0 !important;
+    margin: 0;
+}
+
+body {
+    font-family: Tahoma;
+}
+
+.caption {
+    margin: 0;
+    padding: 0.3em;
+    font-size: 16px;
+    line-height: normal;
+}
+
+.caption,
+.comment {
+    color: white;
+    background: #588ED8;
+    text-shadow: 1px 1px 3px #666;
+
+}
+
+.question .prompt {
+    position: static;
+    display: inline-block;
+    padding: 0.5em;
+    margin: 0 auto;
+}
+
+.search_input {
+    border-bottom: 1px dotted black;
+}
+
+.search_input,
+.search_text {
+    color: #555;
+}
+
+.question .activity,
+.question .day,
+.question .timeOfDay {
+}
+
+.answer {
+    margin-top: 1em;
+}
+
+.answer > p {
+    text-shadow: 1px 1px 3px #AAA;
+    padding: 10px;
+    box-shadow: 1px 1px 5px #777;
+    border: 1px dotted #AAA;
+}
+
+@media screen and (max-width: 800px) {
+    .question .activity,
+    .question .day,
+    .question .timeOfDay {
+        width: 90%;
+        padding: 0;
+        margin: 0 auto;
+        display: block;
+        max-width: 25em;
+    }
+}
+
+@media screen and (min-width: 400px) and (min-width: 800px) {
+    .question .activity,
+    .question .day,
+    .question .timeOfDay {
+       width: auto;
+    }
+}
