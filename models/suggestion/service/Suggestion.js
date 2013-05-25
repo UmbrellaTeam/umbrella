@@ -108,18 +108,20 @@ Service.prototype.find = function(
 ) {
     var filter = {}, options = {};
 
-    if (search.temperature) {
+    if (search.temperatureMin) {
         filter.temperatureMin = {
-            $gte: search.temperature
+            $lte: search.temperatureMin
         };
+    }
 
+    if (search.temperatureMax) {
         filter.temperatureMax = {
-            $lte: search.temperature
+            $gte: search.temperatureMax
         };
     }
 
     if (search.cloudiness) {
-        filter.cloudiness = {$regex: '.*' + search.cloudiness + '.*'};
+        filter.cloudiness = search.cloudiness;
     }
 
     if (search.activity) {

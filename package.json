@@ -16,6 +16,7 @@
   "subdomain": "api.umbrella",
   "dependencies": {
     "express": "*",
+    "request": "*",
     "express-validator": "*",
     "mongoose": "*",
     "socket.io": "*",

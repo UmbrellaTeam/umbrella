@@ -6,6 +6,7 @@
 
 var Error = require('error'),
     Suggestion = require('../models/suggestion/Suggestion'),
+    Weather = require('../models/weather/Object'),
     Constants = require('../models/suggestion/Constants')
 ;
 
@@ -53,6 +54,8 @@ module.exports = {
     find: function(req, res) {
 
         req.assert('activity', 'activity validation failed').notEmpty();
+        req.assert('date', 'date validation failed').notEmpty();
+        req.assert('timeOfDay', 'timeOfDay validation failed').notEmpty();
 
         if (req.hasErrors()) {
 
@@ -70,29 +73,60 @@ module.exports = {
         search.offset = search.offset || Constants.DEFAULT_OFFSET;
         search.count = search.count || Constants.DEFAULT_COUNT;
 
-        Suggestion.find(
-            module.exports.storage,
-            search,
-            function(err, result) {
-                if (err) {
+        Weather.get(module.exports.storage, search.date, search.timeOfDay, function(err, result) {
+            if (err) {
 
-                    return res.error(
-                        new Error(
-                            'Failed to find suggestion: ' + (err.message || 'Unknown error'),
-                            err,
-                            Error.CODE_SERVER_ERROR
-                        )
-                    );
+                return res.error(
+                    new Error(
+                        'Failed to get weather forecast: ' + (err.message || 'Unknown error'),
+                        err,
+                        Error.CODE_SERVER_ERROR
+                    )
+                );
+            }
+
+            if (!result) {
+
+                return res.error(
+                    new Error(
+                        'Failed to get weather forecast: forecast for specified date was not found',
+                        err,
+                        Error.CODE_SERVER_ERROR
+                    )
+                );
+            }
+
+            search.temperatureMin = result.temperatureMin;
+            search.temperatureMax = result.temperatureMax;
+            search.cloudiness = result.cloudiness;
+
+            Suggestion.find(
+                module.exports.storage,
+                search,
+                function(err, result) {
+                    if (err) {
+
+                        return res.error(
+                            new Error(
+                                'Failed to find suggestion: ' + (err.message || 'Unknown error'),
+                                err,
+                                Error.CODE_SERVER_ERROR
+                            )
+                        );
+                    }
+
+                    if (result && result.length) {
+
+                        return res.send(result[Math.floor(Math.random() * result.length)]);
+                    }
+
+                    res.send(null);
                 }
+            );
+        });
 
-                if (result && result.length) {
 
-                    return res.send(result[Math.floor(Math.random() * result.length)]);
-                }
 
-                res.send(null);
-            })
-        ;
     },
 
     /**
