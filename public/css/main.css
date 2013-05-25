@@ -5,17 +5,35 @@ html, body {
     height: 100%;
 }
 body {
-    //background-color: #54c4fb;
-    //background-image: url("/img/bg.png");
-    //background-repeat: repeat-x;
     text-align: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.bg-1 {
+    background: url('/img/bg-1.jpg') no-repeat fixed;
+}
+.bg-2 {
+    background: url('/img/bg-2.png') no-repeat fixed;
+}
+.bg-3 {
+    background: url('/img/bg-3.png') no-repeat fixed;
+}
+.bg-4 {
+    background: url('/img/bg-4.png') no-repeat fixed;
+}
+.bg-5 {
+    background: url('/img/bg-5.png') no-repeat fixed;
 }
 .bg-pic {
     z-index: -1;
     position: absolute;
     top: 0;
     left: 0;
-    background: url("/img/pogodable_logo.png") no-repeat 10px 10px;
+    background: url("/img/pogodable_logo_New.png") no-repeat;
     width: 500px;
     height: 124px;
 }
@@ -26,22 +44,12 @@ body {
     margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
 }
 
-.caption {
-    padding-top: 18%;
-    margin-top: 0;
-    margin-bottom: 5px;
-}
-.caption.topped {
-    padding-top: 10%;
-}
-
-.comment {
-    font-size: 12px;
-    margin-bottom: 15px;
-}
-
 .question {
+    padding-top: 25%;
     font-size: 20px;
+}
+.question.topped {
+    padding-top: 15%;
 }
 
 .question > div,

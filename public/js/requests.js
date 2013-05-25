@@ -61,7 +61,7 @@ $(function() {
 			},
 			function(response) {
 				if(response && response.suggestion) {
-					$('.question-wrapper .caption').addClass('topped');
+					$('.question').addClass('topped');
 					$('.answer-wrapper').fadeIn(300);
 					$('.answer div').html(response.suggestion.suggestion);
 					if(response.weather) {

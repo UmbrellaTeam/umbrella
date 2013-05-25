@@ -11,8 +11,6 @@
 <body>
     <div class="bg-pic"></div>
     <div class="question-wrapper">
-        <h1 class="caption">Погода в действии</h1>
-        <div class="comment">мы собираем погоду с yandex, gismeteo, yahoo и других источников</div>
         <div class="question">
             <div class="prompt">Я иду</div>
             <select class="activity">
@@ -43,7 +41,11 @@
             <div class="twitter-tweet"><a href="https://twitter.com/share?hashtags=pogodable,hackday&text=Я не парюсь из-за погоды. Я пользуюсь" class="twitter-share-button" data-lang="en">Tweet</a></div>
         </div>
     </div>
+
     <script src="/js/jquery.js"></script>
+    <script type="text/javascript">
+        $('body').addClass('bg-' + Math.floor(Math.random() * 5 + 0.9999999999));
+    </script>
     <script src="/js/bootstrap.js"></script>
     <script src="/js/date.js"></script>
     <script src="/js/requests.js"></script>
