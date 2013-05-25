@@ -82,8 +82,9 @@ $(function() {
 		if(day > 0 && day < 6) activity = "51a08e527aebff8865000002";
 		$("select.activity").val(activity);
 		/* timeOfDay */
-		if(hours > 0 && hours < 11) timeOfDay = "morning";
+		if(hours > 5 && hours < 11) timeOfDay = "morning";
 		if(hours >= 11 && hours < 18) timeOfDay = "day";
-		$("select.timeOfDay").val(timeOfDay);
+        if(hours >= 0 && hours <= 5) timeOfDay = "night";
+        $("select.timeOfDay").val(timeOfDay);
 	};
 });
