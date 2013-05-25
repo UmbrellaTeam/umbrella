@@ -23,6 +23,7 @@ jsdom.env({
                 'облачно, дождь, гроза': Constants.CLOUDINESS_RAINY,
                 'облачно с прояснениями, небольшой дождь': Constants.CLOUDINESS_RAINY,
                 'переменная облачность, возможен дождь, гроза': Constants.CLOUDINESS_RAINY,
+                'переменная облачность, небольшой дождь': Constants.CLOUDINESS_RAINY,
                 'ясно': Constants.CLOUDINESS_SUNNY
             },
             node = $('.b-forecast-detailed__line').first(),

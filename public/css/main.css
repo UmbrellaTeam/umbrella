@@ -5,9 +5,9 @@ html, body {
     height: 100%;
 }
 body {
-    background-color: #54c4fb;
-    background-image: url("/img/bg.png");
-    background-repeat: repeat-x;
+    //background-color: #54c4fb;
+    //background-image: url("/img/bg.png");
+    //background-repeat: repeat-x;
     text-align: center;
 }
 .bg-pic {
