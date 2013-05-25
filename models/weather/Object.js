@@ -16,7 +16,7 @@ function Weather(options) {
     this.temperatureMin = options.temperatureMin;
     this.temperatureMax = options.temperatureMax;
     this.humidity = options.humidity;
-    this.cloudiness = options.cloudyness;
+    this.cloudiness = options.cloudiness;
 }
 
 /**
