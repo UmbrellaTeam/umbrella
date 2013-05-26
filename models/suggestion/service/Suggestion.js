@@ -163,7 +163,7 @@ Service.prototype.find = function(
 
     this.suggestion.find(
         filter,
-        'suggestion',
+        'suggestion date',
         options,
         function(err, result) {
             if (err) {
