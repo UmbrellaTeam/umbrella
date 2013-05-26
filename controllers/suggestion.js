@@ -121,7 +121,24 @@ module.exports = {
 
                     if (result && result.length) {
 
-                        myResponse.suggestion = result[Math.floor(Math.random() * result.length)];
+                        var suggestion = result[Math.floor(Math.random() * result.length)];
+                        myResponse.suggestion = suggestion;
+
+                        if (suggestion && suggestion.author) {
+
+                            var author = new Author(suggestion.author, suggestion.authorType || 'twitter');
+
+                            return author.getUserInfo(module.exports.config, module.exports.redis, function(err, profile) {
+
+                                if (err || !profile || !profile.profile_image_url) {
+                                    suggestion.authorProfilePic = '/img/1px.gif';
+                                } else {
+                                    suggestion.authorProfilePic = profile.profile_image_url;
+                                }
+
+                                return res.send(myResponse);
+                            });
+                        }
                     }
 
                     res.send(myResponse);
