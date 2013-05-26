@@ -7,8 +7,8 @@
 var Error = require('error'),
     Suggestion = require('../models/suggestion/Suggestion'),
     Weather = require('../models/weather/Object'),
-    Constants = require('../models/suggestion/Constants')
-;
+    Constants = require('../models/suggestion/Constants'),
+    Author = require('../models/author/Object');
 
 module.exports = {
 
