@@ -128,9 +128,18 @@ body {
     text-align: left;
     max-width: 400px;
 }
+.answer .author {
+    position: relative;
+    font-size: 14px;
+    margin-right: 20px;
+    float: right;
+    margin-top: -10px;
+}
 .answer img {
     width: 40px;
     height: 40px;
+    position: relative;
+    bottom: 5px;
 }
 .answer .degrees {
     margin-left: 15px;
@@ -203,5 +212,10 @@ body {
         margin-left: 20px;
         margin-right: 20px;
     }
+
+    .answer .suggestion {
+        margin-top: 20px;
+    }
+
 
 }

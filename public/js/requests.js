@@ -1,5 +1,6 @@
 $(function() {
 	var BACKEND = 'http://pogodable.ru/api';
+    var firstLoad = true;
 
     var loadAnswer = function() {
         $('.answer-wrapper').hide();
@@ -19,7 +20,13 @@ $(function() {
                     };
                     $('.answer-wrapper').fadeIn(300);
                     $('.answer div.suggestion').html(response.suggestion.suggestion);
-                    if(response.weather) {
+                    if (response.suggestion.author) {
+                            $('.answer div.author').html(
+                                '<a target="_blank" href="http://twitter.com/' +
+                                    response.suggestion.author +
+                                    '">@' + response.suggestion.author + '</a>');
+                    }
+                    if (response.weather) {
                         $('.answer .weather-list').empty();
                         var weather = {
                             'morning': response.weather['morning'],
@@ -29,7 +36,6 @@ $(function() {
                         for (var i in weather) {
                             var currentWeather = response.weather[i];
                             var timeOfDay = timesOfDay[i];
-                            console.log(i);
                             $('.answer .weather-list').append($(
                                 '<div class="weather">' +
                                     '<img src="/img/cloudiness/' + currentWeather.cloudiness + '.png"></img>' +
@@ -45,6 +51,10 @@ $(function() {
                             ));
                         }
                     }
+                    if (!firstLoad) {
+                        changeBg();
+                    }
+                    firstLoad = false;
                 }
             }
         );
@@ -71,6 +81,18 @@ $(function() {
 
         return false;
     });
+
+    var changeBg = function() {
+        var oldBg = $('body').attr('class').split('-')[1];
+        var newBg = oldBg;
+
+        while (oldBg == newBg) {
+            newBg = Math.floor(Math.random() * 4 + 0.9999999999);
+        }
+
+        $('body').attr('class', '');
+        $('body').addClass('bg-' + newBg);
+    };
 
     loadAnswer();
 });
