@@ -6,6 +6,7 @@ html, body {
 }
 body {
     text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .bg-1 {
     background: url('/img/bg-1.jpg') no-repeat center center fixed;
@@ -90,6 +91,9 @@ body {
     font-size: 20px;
     position: relative;
     top: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #397249;
 }
 .question .activity {
     width: 140px;
@@ -115,11 +119,13 @@ body {
 }
 .answer > div {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
 }
 .answer .suggestion {
     margin-left: 20px;
-    margin-top: 7px;
+    position: relative;
+    bottom: 10px;
+    text-align: left;
     max-width: 400px;
 }
 .answer img {
@@ -128,6 +134,11 @@ body {
 }
 .answer .degrees {
     margin-left: 15px;
+}
+.answer .time {
+    font-size: 10px;
+    position: absolute;
+    margin: -8px 0 0 14px;
 }
 
 .social-wrapper, .push {

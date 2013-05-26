@@ -12,19 +12,30 @@ $(function() {
             },
             function(response) {
                 if(response && response.suggestion) {
+                    var timesOfDay = {
+                        'morning': 'утром',
+                        'day': 'днём',
+                        'evening': 'вечером'
+                    };
                     $('.answer-wrapper').fadeIn(300);
                     $('.answer div.suggestion').html(response.suggestion.suggestion);
                     if(response.weather) {
                         $('.answer .weather-list').empty();
-                        for (var i in response.weather) {
-                            if (i == 'night') {
-                                continue;
-                            }
+                        var weather = {
+                            'morning': response.weather['morning'],
+                            'day': response.weather['day'],
+                            'evening': response.weather['evening']
+                        };
+                        for (var i in weather) {
                             var currentWeather = response.weather[i];
-                            console.log(currentWeather);
+                            var timeOfDay = timesOfDay[i];
+                            console.log(i);
                             $('.answer .weather-list').append($(
                                 '<div class="weather">' +
-                                    '<img src="/img/cloudiness/' + currentWeather.cloudiness + '.png"></img>' +
+                                    '<img src="/img/' + currentWeather.cloudiness + '.png"></img>' +
+                                    '<span class="time">' +
+                                        timeOfDay +
+                                    '</span>' +
                                     '<span class="degrees">+' +
                                         currentWeather.temperatureMin +
                                         '…+' +
@@ -50,6 +61,7 @@ $(function() {
         var otherElement = element.prev();
         otherElement.insertAfter(element).removeClass('active');
         element.addClass('active');
+        loadAnswer();
     };
 
     $('.question li a').on('click', function() {
