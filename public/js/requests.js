@@ -60,18 +60,5 @@ $(function() {
         return false;
     });
 
-	var setDefaultSelect = function() {
-		var time = new Date();
-		var day = time.getDay(),
-			hours = time.getHours(),
-			activity = "51a08e807aebff8865000003",
-			timeOfDay = "evening";
-
-		if(day > 0 && day < 6) {
-            activity = "51a08e527aebff8865000002";
-        }
-		selectElement(activity);
-	};
-
     loadAnswer();
 });
