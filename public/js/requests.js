@@ -19,13 +19,18 @@ $(function() {
                         'evening': 'вечером'
                     };
                     $('.answer-wrapper').fadeIn(300);
-                    $('.answer div.suggestion').html(response.suggestion.suggestion);
                     if (response.suggestion.author) {
-                            $('.answer div.author').html(
-                                '<a target="_blank" href="http://twitter.com/' +
-                                    response.suggestion.author +
-                                    '">@' + response.suggestion.author + '</a>');
+                        response.suggestion.suggestion =
+                        '&laquo;' + response.suggestion.suggestion + '&raquo;';
+                        $('.answer div.author').html(
+                            '<a target="_blank" href="http://twitter.com/' +
+                                response.suggestion.author +
+                                '">@' + response.suggestion.author +
+                            '</a>');
+                    } else {
+                        $('.answer div.author').html('');
                     }
+                    $('.answer div.suggestion').html(response.suggestion.suggestion);
                     if (response.weather) {
                         $('.answer .weather-list').empty();
                         var weather = {
@@ -51,10 +56,10 @@ $(function() {
                             ));
                         }
                     }
-                    if (!firstLoad) {
+                    /*if (!firstLoad) {
                         changeBg();
                     }
-                    firstLoad = false;
+                    firstLoad = false;*/
                 }
             }
         );
