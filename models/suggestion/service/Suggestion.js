@@ -21,6 +21,8 @@ function Service(storage) {
 //        cloudiness: {type: String, required: true},
 //        timeOfDay: {type: String, required: true},
         date: {type: Date, required: true},
+        author: {type: String, required: false},
+        authorType: {type: String, required: false},
         activity: {
             type: storage.Schema.ObjectId,
             ref: SCHEMA_NAME_ACTIVITY
@@ -163,7 +165,7 @@ Service.prototype.find = function(
 
     this.suggestion.find(
         filter,
-        'suggestion date',
+        'suggestion date author authorType',
         options,
         function(err, result) {
             if (err) {
