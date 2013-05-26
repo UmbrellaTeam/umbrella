@@ -16,10 +16,11 @@ function Service(storage) {
 
     var suggestion = new storage.Schema({
         suggestion: {type: String, required: true, trim: true},
-        temperatureMin: {type: Number, 'default': 0, required: true},
-        temperatureMax: {type: Number, 'default': 0, required: true},
-        cloudiness: {type: String, required: true},
-        timeOfDay: {type: String, required: true},
+//        temperatureMin: {type: Number, 'default': 0, required: true},
+//        temperatureMax: {type: Number, 'default': 0, required: true},
+//        cloudiness: {type: String, required: true},
+//        timeOfDay: {type: String, required: true},
+        date: {type: Date, required: true},
         activity: {
             type: storage.Schema.ObjectId,
             ref: SCHEMA_NAME_ACTIVITY
@@ -108,25 +109,29 @@ Service.prototype.find = function(
 ) {
     var filter = {}, options = {};
 
-    if (search.temperatureMin) {
-        filter.temperatureMin = {
-            $lte: search.temperatureMin
-        };
+    if (search.date) {
+        filter.date = new Date(search.date);
     }
 
-    if (search.temperatureMax) {
-        filter.temperatureMax = {
-            $gte: search.temperatureMax
-        };
-    }
-
-    if (search.cloudiness) {
-        filter.cloudiness = search.cloudiness;
-    }
-
-    if (search.timeOfDay) {
-        filter.timeOfDay = search.timeOfDay;
-    }
+//    if (search.temperatureMin) {
+//        filter.temperatureMin = {
+//            $lte: search.temperatureMin
+//        };
+//    }
+//
+//    if (search.temperatureMax) {
+//        filter.temperatureMax = {
+//            $gte: search.temperatureMax
+//        };
+//    }
+//
+//    if (search.cloudiness) {
+//        filter.cloudiness = search.cloudiness;
+//    }
+//
+//    if (search.timeOfDay) {
+//        filter.timeOfDay = search.timeOfDay;
+//    }
 
     if (search.activity) {
         var ObjectId = require('mongoose').Types.ObjectId;

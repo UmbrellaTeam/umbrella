@@ -55,7 +55,7 @@ module.exports = {
 
         req.assert('activity', 'activity validation failed').notEmpty();
         req.assert('date', 'date validation failed').notEmpty();
-        req.assert('timeOfDay', 'timeOfDay validation failed').notEmpty();
+//        req.assert('timeOfDay', 'timeOfDay validation failed').notEmpty();
 
         if (req.hasErrors()) {
 
@@ -138,10 +138,11 @@ module.exports = {
      */
     create: function(req, res) {
         req.assert('activity', 'activity validation failed').notEmpty();
-        req.assert('temperatureMin', 'temperatureMin validation failed').notEmpty();
-        req.assert('temperatureMax', 'temperatureMax validation failed').notEmpty();
-        req.assert('cloudiness', 'cloudiness validation failed').notEmpty();
+//        req.assert('temperatureMin', 'temperatureMin validation failed').notEmpty();
+//        req.assert('temperatureMax', 'temperatureMax validation failed').notEmpty();
+//        req.assert('cloudiness', 'cloudiness validation failed').notEmpty();
         req.assert('suggestion', 'suggestion validation failed').notEmpty();
+        req.assert('date', 'date validation failed').notEmpty();
 
         if (req.hasErrors()) {
 

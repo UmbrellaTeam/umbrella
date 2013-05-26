@@ -50,9 +50,9 @@ Service.prototype.get = function(options, callback) {
 
         var getForecast = function(info) {
 
-            if (info[date] && info[date][options.timeOfDay]) {
+            if (info && info[date]) {
 
-                return callback(null, info[date][options.timeOfDay]);
+                return callback(null, info[date]);
             }
 
             return callback(null, null);
