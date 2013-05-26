@@ -58,50 +58,50 @@ body {
     margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
 }
 
-.question {
-    padding-top: 25%;
-    font-size: 20px;
-}
-.question.topped {
+.inner {
     padding-top: 15%;
+    font-size: 20px;
 }
 
 .question > div,
-.question > select,
+.question > ul,
 .question > button {
-    margin-top: 20px;
+    display: inline-block;
+    vertical-align: top;
 }
-
 .question .prompt {
     position: relative;
-    display: inline-block;
     top: 5px;
 }
-
-.question select {
-    margin-left: 10px;
-    font-size: 20px;
-    height: 41px;
+.question > ul,
+.question > button {
+    margin-left: 20px;
+}
+.question ul {
+    margin-bottom: 0;
+}
+.question li {
+    float: none;
+}
+.question .nav-pills .active a {
+    background-color: #6d999d;
 }
 .question button {
-    margin-left: 10px;
+    font-size: 20px;
     position: relative;
-    bottom: 5px;
+    top: 2px;
 }
 .question .activity {
     width: 140px;
 }
-.question .day {
+.question .date {
     width: 185px;
-}
-.question .timeOfDay {
-    width: 120px;
 }
 
 .answer-wrapper {
     margin-left:auto;
     margin-right: auto;
-    display:none;
+    display: none;
 }
 .answer {
     display: inline-block;
@@ -109,25 +109,25 @@ body {
     padding: 20px;
     margin-top: 5%;
     margin-bottom: 5%;
-    font-size: 1.7em;
+    font-size: 18px;
     line-height: 1.3em;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    -webkit-border-radius: 15px;
-       -moz-border-radius: 15px;
-            border-radius: 15px;
+    background-image: url("/img/bg-answer.png");
+}
+.answer > div {
+    display: inline-block;
+    vertical-align: top;
+}
+.answer .suggestion {
+    margin-left: 20px;
+    margin-top: 7px;
+    max-width: 400px;
 }
 .answer img {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
 }
-.answer span.degrees {
+.answer .degrees {
     margin-left: 15px;
-}
-.answer div {
-    position: relative;
-    top: 4px;
-    margin-left: 10px;
 }
 
 .social-wrapper, .push {
@@ -153,22 +153,39 @@ body {
 }
 
 @media only screen
-    and (max-width : 700px) {
+    and (max-width : 650px) {
 
     .bg-pic {
-        display: none;
+        background: url("/img/pogodable_logo_mobile.png") no-repeat;
     }
 
     .social-wrapper {
         display: none;
     }
 
+    .question li {
+        display:inline-block;
+    }
+
     .question > div,
-    .question > select,
+    .question > ul,
     .question > button {
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .question > ul,
+    .question > button {
+        margin-top: 7px;
+    }
+
+    .question .activity {
+        margin-top: 14px;
+        width: auto;
+    }
+    .question .date {
+        width: auto;
     }
 
     .answer {

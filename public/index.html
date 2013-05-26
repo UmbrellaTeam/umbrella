@@ -5,30 +5,40 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/img/favicon.ico" />
-    <link href="/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="/css/bootstrap.cosmo.css" rel="stylesheet" media="screen">
     <link href="/css/main.css" rel="stylesheet" media="screen">
 </head>
 <body>
     <div class="bg-pic"></div>
     <div class="question-wrapper">
-        <div class="question">
-            <div class="prompt">Я иду</div>
-            <select class="activity">
-            </select>
-            <select class="day">
-            </select>
-            <select class="timeOfDay">
-                <option value="morning">утром</option>
-                <option value="day">днём</option>
-                <option value="evening">вечером</option>
-                <option value="night">ночью</option>
-            </select>
-            <button id="ask" class="btn btn-large btn-success">Узнать погоду!</button>
-        </div>
-        <div class="answer-wrapper">
-            <div class="answer">
-                <div><img src=""/><span class="degrees"></span></div>
-                <div class="suggestion"></div>
+        <div class="inner">
+            <div class="question">
+                <div class="prompt">Я иду</div>
+                <ul class="nav nav-pills activity">
+                    <li class="active" data-id="51a08e807aebff8865000003"><a href="#">гулять</a></li>
+                    <li data-id="51a08e527aebff8865000002"><a href="#">на работу</a></li>
+                </ul>
+                <ul class="nav nav-pills date">
+                    <li class="active" data-id="2013-05-26"><a href="#">сегодня</a></li>
+                    <li data-id="2013-05-27"><a href="#">завтра</a></li>
+                </ul>
+                <button id="ask" class="btn btn-success">Узнать погоду!</button>
+            </div>
+            <div class="answer-wrapper">
+                <div class="answer">
+                    <div class="weather-list">
+                        <div class="weather">
+                            <img src="/img/sunny.png" /><span class="degrees">11..15</span>
+                        </div>
+                        <div class="weather">
+                            <img src="/img/sunny.png" /><span class="degrees">15..23</span>
+                        </div>
+                        <div class="weather">
+                            <img src="/img/sunny.png" /><span class="degrees">30..40</span>
+                        </div>
+                    </div>
+                    <div class="suggestion">Тебе повезло - не надо будет париться на жаре :). По дороге побалуй себя мороженным, а вечером на Дворцовой играет Бутман вместе с Fantine. Как раз после работы :)</div>
+                </div>
             </div>
         </div>
 
