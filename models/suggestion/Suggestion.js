@@ -23,6 +23,8 @@ function Suggestion(options) {
     this.suggestion = options.suggestion;
 //    this.timeOfDay = options.timeOfDay;
     this.date = options.date;
+    this.author = options.author;
+    this.authorType = options.authorType;
 }
 
 /**
