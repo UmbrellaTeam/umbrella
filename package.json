@@ -21,6 +21,7 @@
     "mongoose": "*",
     "socket.io": "*",
     "jsdom": "*",
+    "twitter": "*",
     "runnable": "git://github.com/vetrovosk/node-runnable.git",
     "error": "git://github.com/vetrovosk/node-error.git",
     "iniconfig": "git://github.com/vetrovosk/node-iniconfig.git"
