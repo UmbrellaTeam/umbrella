@@ -32,10 +32,14 @@ $(function() {
                             console.log(i);
                             $('.answer .weather-list').append($(
                                 '<div class="weather">' +
+<<<<<<< HEAD
                                     '<img src="/img/cloudiness/' + currentWeather.cloudiness + '.png"></img>' +
+=======
+                                    '<img src="/img/' + currentWeather.cloudiness + '.png"></img>' +
                                     '<span class="time">' +
                                         timeOfDay +
                                     '</span>' +
+>>>>>>> time of day comments
                                     '<span class="degrees">+' +
                                         currentWeather.temperatureMin +
                                         '…+' +
