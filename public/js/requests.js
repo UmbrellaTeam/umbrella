@@ -24,7 +24,7 @@ $(function() {
                             console.log(currentWeather);
                             $('.answer .weather-list').append($(
                                 '<div class="weather">' +
-                                    '<img src="/img/' + currentWeather.cloudiness + '.png"></img>' +
+                                    '<img src="/img/cloudiness/' + currentWeather.cloudiness + '.png"></img>' +
                                     '<span class="degrees">+' +
                                         currentWeather.temperatureMin +
                                         '…+' +
