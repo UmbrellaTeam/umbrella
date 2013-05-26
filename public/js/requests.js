@@ -25,7 +25,10 @@ $(function() {
                         $('.answer div.author').html(
                             '<a target="_blank" href="http://twitter.com/' +
                                 response.suggestion.author +
-                                '">@' + response.suggestion.author +
+                                '">' +
+                                    '<img class="twitpic" src="' + response.suggestion.authorProfilePic +
+                                '"/>@' +
+                            response.suggestion.author +
                             '</a>');
                     } else {
                         $('.answer div.author').html('');

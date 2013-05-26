@@ -36,13 +36,20 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
-.bg-5 {
-    background: url('/img/bg-5.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+
+.bg-1 .question .nav-pills .active a {
+    background-color: #DFC184;
 }
+.bg-2 .question .nav-pills .active a {
+    background-color: #AD7460;
+}
+.bg-3 .question .nav-pills .active a {
+    background-color: #7EB5D6;
+}
+.bg-4 .question .nav-pills .active a {
+    background-color: #6d999d;
+}
+
 .bg-pic {
     z-index: -1;
     position: absolute;
@@ -85,7 +92,7 @@ body {
     float: none;
 }
 .question .nav-pills .active a {
-    background-color: #6d999d;
+    cursor: default;
 }
 .question button {
     font-size: 20px;
@@ -133,9 +140,11 @@ body {
     font-size: 14px;
     margin-right: 20px;
     float: right;
-    margin-top: -10px;
 }
-.answer img {
+.answer .author > a {
+    display: block;
+}
+.answer .weather-list img {
     width: 40px;
     height: 40px;
     position: relative;
@@ -148,6 +157,13 @@ body {
     font-size: 10px;
     position: absolute;
     margin: -8px 0 0 14px;
+}
+.answer .twitpic {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    right: 7px;
+    top: -2px;
 }
 
 .social-wrapper, .push {
