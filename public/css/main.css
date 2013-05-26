@@ -49,7 +49,7 @@ body {
     top: 0;
     left: 0;
     background: url("/img/pogodable_logo_New.png") no-repeat;
-    width: 500px;
+    width: 350px;
     height: 124px;
 }
 .question-wrapper {
@@ -173,10 +173,11 @@ body {
 }
 
 @media only screen
-    and (max-width : 650px) {
+    and (max-width : 1000px) {
 
     .bg-pic {
         background: url("/img/pogodable_logo_mobile.png") no-repeat;
+        width: 200px;
     }
 
     .social-wrapper {
