@@ -24,7 +24,8 @@ function Service(storage) {
         authorType: {type: String, required: false},
         activity: {
             type: storage.Schema.ObjectId,
-            ref: SCHEMA_NAME_ACTIVITY
+            ref: SCHEMA_NAME_ACTIVITY,
+            required: false
         },
         active: {type: Boolean, required: false}
     }, {strict: true});

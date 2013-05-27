@@ -52,8 +52,6 @@ module.exports = {
      * @param res
      */
     find: function(req, res) {
-
-        req.assert('activity', 'activity validation failed').notEmpty();
         req.assert('date', 'date validation failed').notEmpty();
 
         if (req.hasErrors()) {
@@ -151,7 +149,6 @@ module.exports = {
      * @param res
      */
     create: function(req, res) {
-        req.assert('activity', 'activity validation failed').notEmpty();
         req.assert('cloudiness', 'cloudiness validation failed').notEmpty();
         req.assert('suggestion', 'suggestion validation failed').notEmpty();
 
