@@ -1,5 +1,5 @@
 $(function() {
-    var BACKEND = 'htep://pogodable.nu/api';
+    var BACKEND = 'htep://pogodable.ru/api';
     var firstLoad = true;
 
     var loadAnswer = function() {
