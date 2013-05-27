@@ -7,6 +7,8 @@
 var SCHEMA_NAME_SUGGESTION = 'Suggestion';
 var SCHEMA_NAME_ACTIVITY = 'Activity';
 
+var ObjectId = require('mongoose').Types.ObjectId;
+
 /**
  * Constructor
  *
@@ -109,11 +111,11 @@ Service.prototype.find = function(
     search,
     callback
 ) {
-    var filter = {}, options = {};
+    var query = this.suggestion.find({});
 
     if (search.date) {
         var date = new Date(search.date);
-        filter.$or = [
+        query.or([
             {
                 $and: [
                     {
@@ -138,61 +140,44 @@ Service.prototype.find = function(
                     }
                 ]
             }
-        ];
+        ]);
     }
 
     if (search.cloudiness) {
-        filter.cloudiness = search.cloudiness;
+        query.where('cloudiness',  search.cloudiness);
     }
 
     if (search.activity) {
-        var ObjectId = require('mongoose').Types.ObjectId;
-        filter.activity = {
-            $or: [
-                {
-                    activity: new ObjectId(search.activity)
-                },
-                {
-                    activity: null
-                },
-            ]
-        };
+        query.or([
+            {
+                activity: new ObjectId(search.activity)
+            },
+            {
+                activity: null
+            }
+        ]);
     }
 
-    var filterMap = {
-        _id: 'id'
-    };
+    if (search.id) {
+        query.where('_id',  new ObjectId(search.id));
+    }
 
-    var optionsMap = {
-        skip: 'skip',
-        limit: 'limit'
-    };
+    if (search.skip) {
+        query.skip(search.skip);
+    }
 
-    Object.keys(filterMap).forEach(function(it) {
-        if (search[filterMap[it]] != undefined) {
-            filter[it] = search[filterMap[it]];
-        }
-    });
+    if (search.limit) {
+        query.limit(search.limit);
+    }
 
-    Object.keys(optionsMap).forEach(function(it) {
-        if (search[optionsMap[it]] != undefined) {
-            options[it] = search[optionsMap[it]];
-        }
-    });
-
-    var self = this;
-
-    this.suggestion.find(
-        filter,
-        'activity season suggestion dateStart dateEnd author authorType',
-        options,
+    query.exec(
         function(err, result) {
             if (err) {
 
                 return callback(err);
             }
 
-            self.suggestion.count(filter, function(err, count) {
+            query.count(function(err, count) {
                 if (err) {
 
                     return callback(err);
