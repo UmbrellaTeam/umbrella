@@ -95,7 +95,7 @@ module.exports = {
                 );
             }
 
-            search.cloudiness = result.cloudiness;
+            search.cloudiness = result.day.cloudiness;
 
             myResponse.weather = result;
 
