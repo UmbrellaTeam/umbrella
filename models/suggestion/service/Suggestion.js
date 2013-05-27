@@ -147,7 +147,16 @@ Service.prototype.find = function(
 
     if (search.activity) {
         var ObjectId = require('mongoose').Types.ObjectId;
-        filter.activity = new ObjectId(search.activity);
+        filter.activity = {
+            $or: [
+                {
+                    activity: new ObjectId(search.activity)
+                },
+                {
+                    activity: null
+                },
+            ]
+        };
     }
 
     var filterMap = {
