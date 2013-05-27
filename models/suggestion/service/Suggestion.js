@@ -16,11 +16,10 @@ function Service(storage) {
 
     var suggestion = new storage.Schema({
         suggestion: {type: String, required: true, trim: true},
-//        temperatureMin: {type: Number, 'default': 0, required: true},
-//        temperatureMax: {type: Number, 'default': 0, required: true},
-//        cloudiness: {type: String, required: true},
-//        timeOfDay: {type: String, required: true},
-        date: {type: Date, required: true},
+        cloudiness: {type: String, required: true},
+        dateStart: {type: Date, required: false},
+        dateEnd: {type: Date, required: false},
+        season: {type: String, required: false},
         author: {type: String, required: false},
         authorType: {type: String, required: false},
         activity: {
@@ -112,28 +111,38 @@ Service.prototype.find = function(
     var filter = {}, options = {};
 
     if (search.date) {
-        filter.date = new Date(search.date);
+        var date = new Date(search.date);
+        filter.$or = [
+            {
+                $and: [
+                    {
+                        dateStart: {
+                            $lte: date
+                        }
+                    },
+                    {
+                        dateEnd: {
+                            $gte: date
+                        }
+                    }
+                ]
+            },
+            {
+                $and: [
+                    {
+                        dateStart: null
+                    },
+                    {
+                        dateEnd: null
+                    }
+                ]
+            }
+        ];
     }
 
-//    if (search.temperatureMin) {
-//        filter.temperatureMin = {
-//            $lte: search.temperatureMin
-//        };
-//    }
-//
-//    if (search.temperatureMax) {
-//        filter.temperatureMax = {
-//            $gte: search.temperatureMax
-//        };
-//    }
-//
-//    if (search.cloudiness) {
-//        filter.cloudiness = search.cloudiness;
-//    }
-//
-//    if (search.timeOfDay) {
-//        filter.timeOfDay = search.timeOfDay;
-//    }
+    if (search.cloudiness) {
+        filter.cloudiness = search.cloudiness;
+    }
 
     if (search.activity) {
         var ObjectId = require('mongoose').Types.ObjectId;
@@ -165,7 +174,7 @@ Service.prototype.find = function(
 
     this.suggestion.find(
         filter,
-        'suggestion date author authorType',
+        'activity season suggestion dateStart dateEnd author authorType',
         options,
         function(err, result) {
             if (err) {

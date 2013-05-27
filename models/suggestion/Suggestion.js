@@ -17,12 +17,11 @@ function Suggestion(options) {
     }
 
     this.activity = options.activity;
-//    this.cloudiness = options.cloudiness;
-//    this.temperatureMin = options.temperatureMin;
-//    this.temperatureMax = options.temperatureMax;
+    this.cloudiness = options.cloudiness;
     this.suggestion = options.suggestion;
-//    this.timeOfDay = options.timeOfDay;
-    this.date = options.date;
+    this.dateStart = options.dateStart;
+    this.dateEnd = options.dateEnd;
+    this.season = options.season;
     this.author = options.author;
     this.authorType = options.authorType;
 }
