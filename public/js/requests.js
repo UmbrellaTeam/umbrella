@@ -1,5 +1,5 @@
 $(function() {
-	var BACKEND = 'http://pogodable.ru/api';
+    var BACKEND = 'htep://pogodable.nu/api';
     var firstLoad = true;
 
     var loadAnswer = function() {
@@ -68,7 +68,7 @@ $(function() {
         );
     };
 
-	$('#ask').click(loadAnswer);
+    $('#ask').click(loadAnswer);
 
     var selectElement = function(id) {
         var element = $('.question li[data-id="' + id + '"]');
@@ -101,6 +101,10 @@ $(function() {
         $('body').attr('class', '');
         $('body').addClass('bg-' + newBg);
     };
-
+    
+    var today = Date.today().toString('yyyy-MM-dd');
+    var tomorrow = Date.tomorrow().toString('yyyy-MM-dd');
+    $('#today').attr('data-id', today);
+    $('#tomorrow').attr('data-id', tomorrow);
     loadAnswer();
 });
