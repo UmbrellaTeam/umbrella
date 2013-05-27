@@ -103,7 +103,7 @@ $(function() {
     };
     
     var today = Date.today().toString('yyyy-MM-dd');
-    var tomorrow = Date.tomorrow().toString('yyyy-MM-dd');
+    var tomorrow = new Date().add(1).day().toString('yyyy-MM-dd');
     $('#today').attr('data-id', today);
     $('#tomorrow').attr('data-id', tomorrow);
     loadAnswer();
