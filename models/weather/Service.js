@@ -111,6 +111,7 @@ Service.prototype.getAndSaveForecast = function(location, callback) {
                     'малооблачно': Constants.CLOUDINESS_VARIABLE,
                     'переменная облачность': Constants.CLOUDINESS_VARIABLE,
                     'облачно с прояснениями': Constants.CLOUDINESS_VARIABLE,
+                    'малооблачно, без существенных осадков': Constants.CLOUDINESS_VARIABLE,
                     'облачно': Constants.CLOUDINESS_CLOUDY,
                     'облачно, временами дождь': Constants.CLOUDINESS_OCCASIONAL_RAIN,
                     'облачно, небольшой дождь': Constants.CLOUDINESS_OCCASIONAL_RAIN,
